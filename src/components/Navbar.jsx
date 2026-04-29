@@ -5,7 +5,7 @@ import { Menu, X, Phone } from 'lucide-react'
 import { WA_NUMBER } from '../data/cars'
 
 const links = [
-  { href: '/#fleet', label: 'Unit' },
+  { href: '/#fleet', label: 'Beranda' },
   { href: '/#why-us', label: 'Keunggulan' },
   { href: '/#testimonials', label: 'Testimoni' },
   { href: '/#booking', label: 'Booking' },
