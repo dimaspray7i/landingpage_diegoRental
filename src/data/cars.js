@@ -1,3 +1,9 @@
+import avanzaImage from '../assets/Toyota Avanza - ZA version 2012-15.jpg'
+import innovaImage from '../assets/innova-reborn-putih.jpg'
+import fortunerImage from '../assets/toyota-fortuner.webp'
+import hiaceImage from '../assets/download (2).jpg'
+import xeniaImage from '../assets/xenia.jpg'
+
 export const WA_NUMBER = '6281362032324'
 export const EMAIL = 'diego@gmail.com'
 export const ADDRESS = 'Jl. Ujung Serdang Perumahan Puri Asri Taramedang Blok E No. 22 Tanjung Morawa'
@@ -10,7 +16,7 @@ export const cars = [
     type: 'mpv',
     price: 350000,
     priceFormatted: '350.000',
-    img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=700&q=80',
+    img: avanzaImage,
     badge: 'Best Seller',
     badgeColor: 'red',
     features: [
@@ -32,7 +38,7 @@ export const cars = [
     type: 'mpv',
     price: 550000,
     priceFormatted: '550.000',
-    img: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=700&q=80',
+    img: innovaImage,
     badge: 'Keluarga',
     badgeColor: 'gold',
     features: [
@@ -54,7 +60,7 @@ export const cars = [
     type: 'suv',
     price: 700000,
     priceFormatted: '700.000',
-    img: 'https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?w=700&q=80',
+    img: fortunerImage,
     badge: 'SUV',
     badgeColor: 'gold',
     features: [
@@ -76,7 +82,7 @@ export const cars = [
     type: 'van',
     price: 1600000,
     priceFormatted: '1.600.000',
-    img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&q=80',
+    img: hiaceImage,
     badge: 'Van Besar',
     badgeColor: 'blue',
     features: [
@@ -98,7 +104,7 @@ export const cars = [
     type: 'city',
     price: 350000,
     priceFormatted: '350.000',
-    img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=700&q=80',
+    img: xeniaImage,
     badge: 'Hemat',
     badgeColor: 'green',
     features: [

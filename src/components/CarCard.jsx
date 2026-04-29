@@ -90,10 +90,11 @@ export default function CarCard({ car, index = 0 }) {
               href={waLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 bg-gold text-navy text-xs font-bold px-4 py-2.5 rounded-lg hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5 hover:shadow-gold"
+              className="inline-flex items-center justify-center bg-gold text-navy text-xs font-bold w-10 h-10 rounded-lg hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5 hover:shadow-gold"
               onClick={e => e.stopPropagation()}
+              aria-label="Booking via WhatsApp"
             >
-              📱 Booking
+              📱
             </a>
           ) : (
             <span className="text-xs text-white/30 font-medium">Hubungi kami</span>
