@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 import { WA_NUMBER } from '../data/cars'
+import logo from '../assets/logo.png'
 
 const links = [
   { href: '/#fleet', label: 'Beranda' },
@@ -29,10 +30,10 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 bg-transparent ${
           scrolled
-            ? 'bg-navy/95 backdrop-blur-xl border-b border-gold/10 py-3'
-            : 'bg-transparent py-5'
+            ? 'backdrop-blur-xl border-b border-gold/10 py-3'
+            : 'py-5'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -40,8 +41,8 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="font-display text-2xl font-bold text-gold tracking-wide">
-            Diego<span className="text-white"> Rental</span>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Diego Rental" className="h-20 w-auto" />
           </Link>
 
           {/* Desktop Links */}
@@ -98,9 +99,9 @@ export default function Navbar() {
               <X size={30} />
             </button>
 
-            <div className="font-display text-2xl font-bold text-gold mb-12 tracking-wide">
-              Diego<span className="text-white"> Rental</span>
-            </div>
+            <Link to="/" className="mb-12">
+              <img src={logo} alt="Diego Rental" className="h-20 w-auto" />
+            </Link>
 
             <nav className="flex flex-col items-center gap-6">
               {links.map((link, i) => (
