@@ -10,7 +10,7 @@ const links = [
   { href: '/#why-us', label: 'Keunggulan' },
   { href: '/#testimonials', label: 'Testimoni' },
   { href: '/#booking', label: 'Booking' },
-  { href: '/unit', label: 'Semua Unit' },
+  { href: '/unit', label: 'Unit' },
 ]
 
 export default function Navbar() {
@@ -32,53 +32,91 @@ export default function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 bg-transparent ${
           scrolled
-            ? 'backdrop-blur-xl border-b border-gold/10 py-3'
-            : 'py-5'
+            ? 'backdrop-blur-xl border-b border-gold/10 py-1'
+            : 'py-2'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="Diego Rental" className="h-20 w-auto" />
-          </Link>
+          {/* Desktop Layout: 3 Columns */}
+          <div className="hidden lg:grid grid-cols-3 items-center w-full gap-4">
+            {/* Left: Logo */}
+            <div className="flex justify-start">
+              <Link to="/">
+                <img 
+                  src={logo} 
+                  alt="Diego Rental" 
+                  className={`transition-all duration-300 object-contain ${scrolled ? 'h-16' : 'h-32'} w-auto`} 
+                />
+              </Link>
+            </div>
 
-          {/* Desktop Links */}
-          <ul className="hidden lg:flex items-center gap-8">
-            {links.map(link => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-white/75 text-sm font-medium tracking-wide hover:text-gold transition-colors duration-200 relative group"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
-            ))}
-          </ul>
+            {/* Center: Brand Info & Links */}
+            <div className="flex flex-col items-center text-center gap-2 max-w-md mx-auto">
+              <div className="w-full overflow-hidden relative">
+                <div className="flex whitespace-nowrap animate-marquee gap-20">
+                  <span className="text-xl font-display font-bold text-gold tracking-[0.8em] uppercase">
+                    D I E G O &nbsp; R E N T A L
+                  </span>
+                  <span className="text-xl font-display font-bold text-gold tracking-[0.8em] uppercase">
+                    D I E G O &nbsp; R E N T A L
+                  </span>
+                </div>
+              </div>
+              
+              <h3 className="text-[9px] text-white/30 font-medium uppercase tracking-[0.2em] whitespace-nowrap">
+                Jl. Ujung Serdang Perumahan Puri Asri Taramedang Blok E No. 22 Tanjung Morawa
+              </h3>
 
-          {/* CTA */}
-          <a
-            href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Halo Diego Rental, saya ingin informasi rental mobil 🚗')}`}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden lg:inline-flex items-center gap-2 bg-gold text-navy text-sm font-bold px-4 py-2 rounded-md hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5"
-          >
-            <Phone size={15} />
-            Hubungi Kami
-          </a>
+              {/* Links */}
+              <ul className="flex items-center gap-6 mt-1">
+                {links.map(link => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-white/60 text-[11px] font-bold tracking-[0.15em] uppercase hover:text-gold transition-colors duration-200 relative group"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Hamburger */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu size={24} />
-          </button>
+            {/* Right: CTA */}
+            <div className="flex justify-end">
+              <a
+                href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Halo Diego Rental, saya ingin informasi rental mobil 🚗')}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-gold text-navy text-xs font-bold px-5 py-2 rounded-md hover:bg-gold-light transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-gold/10"
+              >
+                <Phone size={14} />
+                Hubungi Kami
+              </a>
+            </div>
+          </div>
+
+          {/* Mobile Layout (Logo & Hamburger) */}
+          <div className="lg:hidden flex items-center justify-between w-full">
+            <Link to="/">
+              <img 
+                src={logo} 
+                alt="Diego Rental" 
+                className={`transition-all duration-300 ${scrolled ? 'h-16' : 'h-24'} w-auto`} 
+              />
+            </Link>
+            <button
+              className="text-white p-2"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu size={28} />
+            </button>
+          </div>
         </div>
       </motion.nav>
 
@@ -99,8 +137,16 @@ export default function Navbar() {
               <X size={30} />
             </button>
 
-            <Link to="/" className="mb-12">
-              <img src={logo} alt="Diego Rental" className="h-20 w-auto" />
+            <Link to="/" className="mb-10 flex flex-col items-center text-center gap-4">
+              <img src={logo} alt="Diego Rental" className="h-44 w-auto" />
+              <div className="flex flex-col items-center">
+                <h1 className="text-3xl font-display font-bold text-gold tracking-widest">
+                  DIEGO RENTAL
+                </h1>
+                <h3 className="text-sm text-white/50 font-medium mt-2 max-w-[250px]">
+                  Jl. Ujung Serdang Perumahan Puri Asri Taramedang Blok E No. 22 Tanjung Morawa
+                </h3>
+              </div>
             </Link>
 
             <nav className="flex flex-col items-center gap-6">

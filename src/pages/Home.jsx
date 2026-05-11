@@ -65,14 +65,10 @@ function Hero() {
       >
         {/* Left */}
         <motion.div variants={stagger} initial="hidden" animate="show">
-          <motion.div variants={fadeUp}
-            className="inline-flex items-center gap-2 bg-gold/15 border border-gold/25 text-gold px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.12em] uppercase mb-6"
-          >
-            ⭐ #1 Rental Mobil Premium
-          </motion.div>
+
 
           <motion.h1 variants={fadeUp}
-            className="font-display text-5xl md:text-6xl lg:text-[5rem] font-black leading-[1.05] mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6"
           >
             Rental Mobil Terpercaya<br />
             di Tanjung Morawa
@@ -138,15 +134,6 @@ function Hero() {
             <p className="text-xs text-white/50 mb-0.5">Rating Pelanggan</p>
             <p className="text-sm font-bold text-white">⭐ 4.9 / 5.0</p>
             <p className="text-gold text-xs mt-0.5">★★★★★ (500+ review)</p>
-          </motion.div>
-
-          <motion.div
-            className="absolute -top-4 -right-4 glass-card px-4 py-3"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          >
-            <p className="text-xs text-white/50 mb-0.5">Tersedia Sekarang</p>
-            <p className="text-sm font-bold text-white">🚗 18 Unit</p>
           </motion.div>
         </motion.div>
       </motion.div>
